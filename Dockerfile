@@ -3,6 +3,9 @@ FROM php:8.3-fpm-alpine
 RUN apk add --no-cache nginx supervisor nodejs npm git unzip libpng-dev \
     libzip-dev icu-dev oniguruma-dev freetype-dev libjpeg-turbo-dev
 
+RUN mkdir -p /var/lib/nginx/tmp /var/lib/nginx/logs /run/nginx \
+ && chown -R www-data:www-data /var/lib/nginx /run/nginx
+
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
  && docker-php-ext-install pdo_mysql mbstring bcmath gd intl zip exif pcntl calendar
 
