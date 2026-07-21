@@ -1,3 +1,6 @@
+# Backup shell
+backup-crm.sh
+
 .env
 .env.testing
 .idea
