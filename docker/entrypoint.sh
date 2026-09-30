@@ -5,4 +5,5 @@ php artisan config:cache || true
 php artisan route:cache || true
 php artisan storage:link || true
 touch /var/www/html/storage/installed || true
+chown -R www-data:www-data /var/www/html/storage/app/public
 exec supervisord -c /etc/supervisord.conf
